@@ -1,0 +1,9 @@
+Sobre esta guía
+***************
+
+Para los que deseen colaborar con esta guía así como en su contenido, pueden hacerlo enviandome un correo electronico
+(|contact_email|), de preferencia en español, o a traves de GitHub desde el canal para envio de fallos o correcciones
+desde la siguiente url: |bugtracker_url|
+
+Para los mas experimentados pueden colaborar realizando un fork de la guia y luego enviar los cambios entrando en
+|repository|

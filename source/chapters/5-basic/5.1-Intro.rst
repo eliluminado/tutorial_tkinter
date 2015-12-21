@@ -1,0 +1,176 @@
+Empezando por lo básico
+***********************
+
+Lo primero que debemos hacer al igual que con otros módulos, es que debemos importarlo para poder comenzar a utilizarlo,
+y al igual que con otros módulos no hay una sola forma de hacerlo.
+
+La primer forma (y la mas popular):
+
+Python 2.x
+
+    .. code-block:: python
+
+        from Tkinter import *
+
+Python 3.x
+
+    .. code-block:: python
+
+        from tkinter import *
+
+Y la segunda:
+
+Python 2.x
+
+    .. code-block:: python
+
+        import Tkinter
+
+Python 3.x
+
+    .. code-block:: python
+
+        import tkinter
+
+.. note::
+
+    En las versiones 3.x de Python el modulo Tk se debe llamar de esta forma *"from tkinter import *"* y no de esta otra
+    forma *"from Tkinter import *"*, notar la t minuscula en el nombre, es un cambio menor que hay que tener en cuenta si
+    están trabajando con Python 3.
+
+La diferencia entre usar la primera o la segunda forma es la misma con la que nos podemos encontrar a la hora de
+importar un modulo en Python, para verlo les muestro esta diferencia utilizando al modulo *'time'* y usamos el
+siguiente ejemplo:
+
+.. code-block:: python
+    :linenos:
+
+    import time
+    time.sleep(10)
+
+.. code-block:: python
+    :linenos:
+
+    from time import sleep
+    sleep(10)
+
+Usando la forma *"import Tkinter"* cada vez que utilicemos una función de este modulo tendremos que anteponer la palabra
+*'Tkinter'*, en cambio usando la segunda forma *"from Tkinter import *"* simplemente deberemos usar el nombre de la
+función sin el nombre del modulo. Hay otras formas pero dependerá de tu forma de trabajar o la que te resulte mas cómoda,
+en todo caso puedes darle un vistazo a esta traducción de la guía de estilo escrita por Guido van Rossum y Barry Warsaw
+`http://mundogeek.net/traducciones/guia-estilo-python.htm <http://mundogeek.net/traducciones/guia-estilo-python.htm>`_
+
+Por ahora a modo didactico usaremos una variacion de la segunda forma para que los ejemplos sean mas claros, pero esto
+queda a tu eleccion. Ahora si retomemos nuestro camino.
+
+Una observación que tendremos que tener antes de continuar es no debemos pasa por alto la posibilidad de que el usuario
+no tenga instalado las librerías de Tkinter y en consecuencia nuestra aplicación no podrá funcionar, lo mejor en este
+caso como en muchos otros es anticiparnos a los posibles errores que puedan ir surgiendo y manejar las excepciones de
+la siguiente forma:
+
+Python 2.x
+
+    .. code-block:: python
+        :linenos:
+
+        try:
+            import Tkinter
+        except ImportError:
+            raise ImportError("Se requiere el modulo Tkinter")
+
+Python 3.x
+
+    .. code-block:: python
+        :linenos:
+
+        try:
+            import tkinter
+        except ImportError:
+            raise ImportError("Se requiere el modulo tkinter")
+
+Tambien podriamos ir un poco mas lejos y suponer que no sabemos que version esta usando el usuario y llevar el codigo de
+arriba para que sea compatible con ambas versiones de Python
+
+.. code-block:: python
+    :linenos:
+
+    import sys
+
+    PYTHON_VERSION = sys.version_info.major
+
+    if PYTHON_VERSION < 3:
+        try:
+            import Tkinter as tk
+        except ImportError:
+            raise ImportError("Se requiere el modulo Tkinter")
+    else:
+        try:
+            import tkinter as tk
+        except ImportError:
+            raise ImportError("Se requiere el modulo tkinter")
+
+Otra forma igual de efectiva
+
+.. code-block:: python
+    :linenos:
+
+    try:
+        import Tkinter as tk
+    except ImportError:
+        import tkinter as tk
+
+
+La forma mas elegante y eficiente para mi gusto (Aclaro que solo es mi humilde opinion), es a traves de una libreria
+externa llamada *six* que la pueden bajar e instalar desde aqui https://pypi.python.org/pypi/six. Con esta podemos
+obtener la primer forma mostrada pero mas compacta. Dependera de ustedes si van a agregar librerias externas a su
+aplicacion.
+
+.. TODO: Agregar referencia extra sobre six?
+
+.. code-block:: python
+    :linenos:
+
+    try:
+        from six.moves import tkinter as tk
+    except ImportError:
+        raise ImportError("Se requiere el modulo Tkinter")
+
+
+De esta forma en caso de que el potencial usuario de nuestra preciada aplicación, no pueda ejecutarla pueda saber cual
+es motivo (en este caso es que no tenga instalado Tkinter) por el cual no pudo iniciarla.
+
+Una vez importado el modulo Tkinter correctamente podemos utilizarlo para crear nuestra primera ventana de la
+siguiente forma:
+
+.. code-block:: python
+    :linenos:
+
+    from six.moves import tkinter as tk
+
+    root = tk.Tk()
+    root.mainloop()
+
+
+Estas lineas son fundamentales, ya que de ellas dependerá gran parte del contenido así como pueden ser botones y menús,
+aunque mas adelante conforme vayamos viendo temas mas avanzados podremos hacer uso de otras herramientas y técnicas.
+
+En la primera linea (No tengamos en cuenta la importación vista anteriormente) se crea un identificador que sera el que
+utilizaremos para referirnos a la ventana, en este caso lo llamamos 'root' y es una de las funciones mas importantes
+de Tkinter. Siempre que iniciamos un identificador que en este caso lo llamamos 'root' debemos cerrarlo para capturar
+como veremos mas adelante los eventos.
+
+.. note::
+
+    Para que el codigo escrito sea mantenible se utilizara de ahora en adelante el modulo *six*, esto permite ignorar
+    la version de Python utilizada.
+
+.. note::
+
+    La variable 'root' usada para nombrar al identificador, puede ser reemplazada por cualquier otro nombre siempre y
+    cuando se respeten las palabras reservadas de Python, aunque es muy utilizado usar el nombre 'root' para la ventana
+    principal y puede ser una buena practica para que resulte mas familiar a los demás programadores que se quieran unir
+    al desarrollo de nuestra aplicación.
+
+Con esto ya tendremos una ventana vacía que nos servirá para comenzar a trabajar, a partir de ahora iremos ampliando
+el contenido mostrando los distintos widgets con los que contamos en Tkinter y luego para finalizar crearemos un ejemplo
+sencillo para unir lo se vio a lo largo de este material.

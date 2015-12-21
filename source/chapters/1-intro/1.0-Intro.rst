@@ -1,0 +1,7 @@
+Introduccion
+************
+
+Sean bienvenidos a esta noble guía que pretende a lo largo de sus capítulos mostrar las herramientas y conocimientos
+necesarios para el desarrollo de interfaces gráficas con las librerías Tk y el lenguaje de programación Python.
+El contenido de esta guía no pretende ser una referencia completa de lo que puede lograr pero si servir como una base
+al poco contenido que se logra encontrar en español sobre Tkinter.
