@@ -8,5 +8,7 @@ script:
   - sphinx-build -W -b linkcheck source build/linkcheck
 notifications:
   email:
-    on_success: change
+    recipients:
+      - secure: "44N8lUdvs0Wfu3cyxECRvO8wClM5cQgmyKSlP942tMNqQOWw/1ySs1q8u39izvH72ek+nffus5iXebqeij31PFy2CPakzY0UJov+cAS731jvy9aKVduaQHYjKatt+/tYdrseu5MpVJCQ/LWdZvc3kUK2K1PhD3fzNJ26FhstBDiduHoJzrUtG9Web5NRVV4ZvTQ5veTkQdhOl4pkDibFaKNHJ9/yBdn+8NCyik2ZKZTIpjcXBR7Z+BSjxRDVLuQUaK2norEjf+7A95OJ8YtUQOa9PkHtIJU9hMsd7XR/o5z6c5z68DiH6dP3SzHb1RNJpODitZDtkWkPapuV6TZKPUtWRbytvG3Pr7N6g68X8DqO8lk3E9JyBuZ1H9bcup7Wkr2+QYLrKy4FNmjcps6BWGoLcd26g1eP2OhqFKOY+wDZAatdgTJMJU95DnBdfBLnl/z/9+zrCSZ9Bk/PmV6S+7pgGd6inN8ofpJK9bp4Zs+/iH2eGJWVNIMP1y8jDMRBA7OQth+hrYdaJLatvdH1qZCW/Pqfz0GqN+13AkypD6K2TugjQKVI9fEduIKspKwwC8fTQl4UCZFQUmPH8QH7XXDwEcnJEL9iSpxPimHysZzg3I6O/xT7+ZU+0P9SN+v2PAZTXSbhL9RMA3Vez2qNz6fpiE5bzzYY22u3Vih5790="
+    on_success: always
     on_failure: always
