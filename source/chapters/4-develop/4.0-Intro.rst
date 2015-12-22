@@ -7,3 +7,28 @@ desde la siguiente url: |bugtracker_url|
 
 Para los mas experimentados pueden colaborar realizando un fork de la guia y luego enviar los cambios entrando en
 |repository|
+
+
+Workflow
+--------
+
+.. todo:: Ampliar contenido
+
+El desarrollo y las correcciones de la guia se realizan sobre la rama *develop* y se mantiene la rama *master* unicamente
+para el contenido que se considere corregido y correcto.
+
+
+Estilos
+-------
+
+Las imagenes como captura de los ejemplos mostrados, deben ser preferentemente en formato PNG.
+
+Cuando se coloquen imagenes siempre usar la opcion *:alt:* de reStructuredText.
+
+Cuando escriban que los renglones no superen los 120 caracteres.
+
+
+Traducciones
+------------
+
+.. todo:: Ampliar contenido
