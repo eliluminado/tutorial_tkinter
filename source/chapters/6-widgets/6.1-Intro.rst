@@ -1,0 +1,8 @@
+Widgets
+*******
+
+.. TODO: Agregar enlace hacia siguiente seccion
+
+En esta sección no nos centraremos en el posicionamiento y diseño de los elementos que compondrán nuestra interfaz
+gráfica, lo dejaremos para la siguiente sección *Gestión del diseño* en donde se vera mas detenidamente
+este asunto.
