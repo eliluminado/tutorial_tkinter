@@ -1,0 +1,39 @@
+Y que hay de las clases?
+------------------------
+
+.. todo: Ampliar beneficios y diferencias
+
+Los que estuvieron viendo otros tutoriales antes que este, habran notado el uso de clases para crear las interfaces. Esta
+convencion es la mas recomendada por muchos motivos
+
+Veamos un ejemplo introductorio a esta idea y analicemosla:
+
+.. code-block:: python
+    :linenos:
+    :emphasize-lines: 3,7,15
+    :caption: Ejemplo minimo de tk usando *class*
+    :name: basic-class-tk-example
+
+    from six.moves import tkinter as tk
+
+    class UI(tk.Frame):
+        """Docstring."""
+
+        def __init__(self, parent=None):
+            tk.Frame.__init__(self, parent)
+            self.parent = parent
+            self.init_ui()
+
+        def init_ui(self):
+            """Aqui colocariamos los widgets."""
+            self.parent.title("Un titulo para la ventana")
+
+    if __name__ == "__main__":
+        ROOT = tk.Tk()
+        ROOT.geometry("800x600")
+        APP = UI(parent=ROOT)
+        APP.mainloop()
+        ROOT.destroy()
+
+En la linea 15 le estamos diciendo a Python que cuando el usuario ejecute nuestro archivo cree un objeto tkinter, en el
+vemos un codigo muy similar al conocido
