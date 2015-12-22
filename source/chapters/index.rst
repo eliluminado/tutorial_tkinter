@@ -1,5 +1,4 @@
 .. toctree::
-    :caption: Guia
     :glob:
 
     1-intro/*
