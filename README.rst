@@ -4,12 +4,29 @@ Introduccion
 :Copyright: |copyright|
 :Version: |release|. (Descarga)
 
-.. ifconfig:: language is "es"
+.. container:: badges
 
-    .. image:: img/cc-by-sa.svg
-       :align: right
-       :alt: URL hacia el texto de la licencia
-       :target: http://creativecommons.org/licenses/by-sa/4.0/deed.es
+    .. figure:: https://img.shields.io/travis/eliluminado/tutorial_tkinter/develop.svg
+        :alt: Build Status develop
+        :align: left
+        :target: https://travis-ci.org/eliluminado/tutorial_tkinter
+
+        Branch develop
+
+    .. figure:: https://img.shields.io/travis/eliluminado/tutorial_tkinter/master.svg
+        :alt: Build Status master
+        :align: left
+        :target: https://travis-ci.org/eliluminado/tutorial_tkinter
+
+        Branch master
+
+    .. ifconfig:: language is "es"
+
+        .. image:: img/cc-by-sa.svg
+           :align: right
+           :alt: URL hacia el texto de la licencia
+           :target: http://creativecommons.org/licenses/by-sa/4.0/deed.es
+
 
 Puede descargar la versión más reciente de esta guía gratuitamente en la web
 |repository|
