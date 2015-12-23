@@ -1,2 +1,4 @@
 Que es una interfaz grafica
 ***************************
+
+.. include:: 2.1-Considerations.rst

@@ -17,10 +17,15 @@ Contenido:
    license
    changelog
 
-   chapters/index
 
-Indices and tables
-==================
+.. toctree::
+    :caption: Guia
+    :name: toc-guia
+
+    chapters/index
+
+Indices y tablas
+================
 
 * :ref:`genindex`
 * :ref:`search`

@@ -14,3 +14,7 @@ herramienta didáctica e interfaces sencillas nos sobrara, dándonos una perspec
 de una parte muy importante de una aplicación si deseamos distribuirla. Gracias a Tkinter veremos como interactuar
 con el usuario pidiéndole el ingreso de datos, capturando la pulsación de teclas, movimientos del mouse, entre algunas
 de las cosas que podremos lograr.
+
+.. include:: 1.1.1-History.rst
+
+.. include:: 1.1.2-Features.rst
