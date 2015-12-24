@@ -1,0 +1,260 @@
+.. _tk_vars:
+
+Variables
+=========
+
+Acá es donde se muestra una de las opciones que disponemos en varios widgets y es 'textvariable' que tomara como valor
+la variable del tipo StringVar que habíamos mencionado en 'Entry', esta nos permitirá trabajar con varios métodos en
+Entry que se los iré mostrando y los iremos viendo con ejemplos. Cabe aclararse que el uso de estas variables no se
+limitan solamente a la opcion 'textvariable' como lo podremos iremos viendo en otros ejemplos mas adelante.
+
+Tengan en cuenta que StringVar no forma parte de Python sino de Tkinter así que la importación de este es fundamental
+para poder utilizarlo, aunque para algunos resulte una obviedad nunca esta de mas remarcarlo ya que si utilizamos la
+forma *"from Tkinter import \*"* estos detalles no se observan y pueden generar confusión cuando se ven los ejemplos.
+
+.. todo:: Enlazar BooleanVar, DoubleVar, IntVar y StringVar con ancla
+
+Como habíamos mencionado contamos con cuatro clases de variables con Tkinter las cuales son BooleanVar, DoubleVar,
+IntVar y StringVar, esta ultima suele ser la mas vista y utilizada en los tutoriales disponibles en internet pero no por
+esto mas importante que las demás.
+
+Para comenzar a utilizarlo veamoslo con un ejemplo simple, supongamos que tenemos un cuadro de texto y queremos
+almacenar el texto ingresado en una variable, el problema con usar el metodo 'get' del widget 'Entry' es que, lo que se
+almacenaria seria el valor que contiene el cuadro al momento de llamar al metodo lo cual es util, pero hay veces que
+queremos las modificaciones que se puedan ir realizando a dicho texto. En estos casos es donde se nos brindan
+herramientas como estas variables donde las modificaciones que se hacen en el cuadro de texto se ven reflejadas en la
+variable, mas adelante se vera que nos estan limitadas a cuadros de texto sino que contaremos con otros widgets que
+pueden hacer uso de estas.
+
+Un ejemplo sensillo para verlo en accion:
+
+.. code-block:: bash
+
+    >>> # Primero creamos nuestra ventana vacia
+    >>> from six.moves import tkinter as tk
+    >>> root = tk.Tk()
+    >>> # Definimos nuestra variable del tipo "StringVar"
+    >>> variable = tk.StringVar()
+    >>> variable
+    <tkinter.StringVar object at 0x7fe0de0dd630>
+    >>> # Creamos nuestro campo de texto pasandole nuestra variable
+    >>> campo_de_texto = tk.Entry(root, textvariable=variable)
+    >>> campo_de_texto.pack()
+    >>> # Insertamos un poco de texto
+    >>> campo_de_texto.insert(0, "Probando")
+    >>> # Aca llamamos al metodo 'get' de 'Entry'
+    >>> campo_de_texto.get()
+    'Probando'
+    >>># y aca al metodo 'get' pero de nuestra variable para obtener su valor
+    >>> variable.get()
+    'Probando'
+    >>> # Y para repetir su funcionamiento agregamos unpoco mas de texto
+    >>> campo_de_texto.insert('end', " como funciona")
+    >>> campo_de_texto.get()
+    'Probando como funciona'
+    >>> variable.get()
+    'Probando como funciona'
+    >>>
+
+
+.. note::
+
+    Si desean ver como funcionan mas en detalle estas variables pueden ver estos objetos desde el codigo fuente de la
+    libreria Tkinter, para esto deben dirigirse a la carpeta donde se encuentra instalado Python y ahi van a la carpeta
+    'Lib' y luego a la carpeta 'lib-tk' en el caso Python 2.x y para Python 3.x deberan buscar en la carpeta 'tkinter',
+    alli se encuentra el codigo fuente de Tkinter, la clase que contiene al objeto 'StringVar' se encuentra dentro del
+    archivo 'Tkinter.py' en Python 2.x y '__init__.py' para Python 3.x que es el que se carga cuando hacemos
+    'import Tkinter'
+
+Pudimos notar en ese ejemplo el uso de un metodo llamado 'get' el cual esta disponible para las cuatro tipos de
+variables, al igual que otros metodos que iremos viendo de a uno.
+
+
+.. _stringvar:
+
+StringVar
+---------
+
+.. todo::
+
+    * Especificar excepciones posibles
+    * Terminar espeficacion para master
+
+.. py:method:: StringVar(master=None, value=None, name=None)
+
+    :param master:
+    :type master:
+    :param value: Un valor predefinido para la variable
+    :type value: str or None
+    :param name: Un nombre para la variable
+    :type name: str or None
+
+Empecemos viendo esa linea donde creamos esa variable llamada 'variable', donde a 'StringVar' no le pasamos ningun
+argumento, si se dieron una vuelta por el codigo fuente de tkinter habran visto cuando se inicializa el objeto se ve
+que toma 3 parametros con valores 'None', analicemos su funcionamiento
+
+
+.. _stringvar-master:
+
+master
+^^^^^^
+
+.. todo:: Generar documentacion
+
+
+.. _stringvar-value:
+
+value
+^^^^^
+
+Nos permite asignar un valor a la variable cuando esta es creada
+
+.. code-block:: bash
+
+    >>> variable = Tkinter.StringVar(value="Hola")
+    >>> variable.get()
+    'Hola'
+
+
+.. _stringvar-name:
+
+name
+^^^^
+
+.. todo:: Ampliar informacion
+
+Nos permite darle un nombre opcional, por defecto Tkinter le un nombre del tipo PY_VARnum, donde 'num' es reemplazado
+por un numero que varia dependiendo de la cantidad de variables que hayan sido creadas. Este valor es usado internamente
+por el lenguaje Tcl por lo que no nos interesara modificar su valor. Para conocer su valor simplemente llamamos al
+atributo '_name' que nos mostrara el valor de este.
+
+.. code-block:: bash
+
+    >>> variable = tk.StringVar()
+    >>> variable._name
+    'PY_VAR0'
+    >>> variable = tk.StringVar(name="var", value="Hola")
+    >>> variable._name
+    'var'
+
+
+.. FIXME: Encontrar como mostrar este comentario final
+
+Ahora que ya sabemos como y con que crear nuestra variable veamos los metodos que tememos disponibles.
+
+
+.. _stringvar-get-method:
+
+get
+^^^
+
+.. py:method:: get()
+
+    :return: El contenido de la variable
+    :rtype: str
+
+Aunque ya vimos a 'get' no esta demas mencionarlo nuevamente ya que este seguramente sera el mas utilizado junto a
+'set', *'get'* nos permite obtener el valor contenido en la variable.
+
+.. code-block:: bash
+
+    >>> variable.get()
+    'Hola'
+
+
+.. _stringvar-set-method:
+
+set
+^^^
+
+.. py:method:: set(value)
+
+    :param value: El texto a ingresar o cambiar para la variable
+    :type value: str
+
+Como se menciono en la descripcion de 'get' estos forman una gran pareja resultando en dos metodos basicos muy utiles,
+este metodo en particular nos permite modificar el contenido
+
+.. code-block:: bash
+
+    >>> variable.set("Valor que deseamos guardar")
+    >>> variable.get()
+    'Valor que deseamos guardar'
+
+Aunque lo vayamos a usar para almacenar cadenas de texto, tambien podemos pasarle un entero y nos lo guardaria como una
+cadena, si le pasamos un boleano lo almacenaria como una cadena con un 1 o un 0.
+
+
+.. _stringvar-trace-variable-method:
+
+trace_variable
+^^^^^^^^^^^^^^
+
+.. py:method:: trace_variable(mode, callback)
+
+    :param mode: El modo de captura
+    :type mode: str
+    :param callback:
+    :type callback:
+
+    :return: Devuelve el indentificador interno de tk
+    :rtype: str
+
+Ya vimos dos metodos sencillos, pero ahora mostraremos tres con un uso un poco mas avanzado pero una vez que entendamos
+como funcionan nos permitiran conseguir resultados bastantes avanzados. En primer lugar tenemos a *'trace_variable'* el
+cual nos permite definir una funcion a la cual llamar cuando se realice una determinada accion sobre la variable para
+ello cuenta con dos parametros uno de ellos es 'mode' que nos pide en que modo de captura es que llamara a la funcion,
+puede tomar tres valores 'w', 'r' y 'u' donde 'w' es para cuando se escribe en la variable, 'r' corresponde a la lectura
+de la misma y por ultimo 'u' que es llamado cuando la variable es eliminada.
+
+.. todo:: Crear ejemplos
+
+
+.. _stringvar-trace-vdelete-method:
+
+trace_vdelete
+^^^^^^^^^^^^^
+
+Mientras que con 'trace_variable' podiamos definir una funcion para determinados eventos tambien necesitabamos una
+herramienta que nos permitiera quitar esa respuesta para ese evento y es cuando entra 'trace_vdelete'. Su funcionamiento
+es es muy simple este toma un modo que ya habiamos visto y ademas nos pide el valor que nos devolvio 'trace_variable'
+al momento de ser ejecutado, veamoslo con un pequeño ejemplo y luego retomamos su explicacion
+
+.. todo:: Crear ejemplo
+
+
+.. _stringvar-trace-vinfo-method:
+
+trace_vinfo
+^^^^^^^^^^^
+
+.. todo:: Generar documentacion
+
+
+.. _variables:
+
+Mas variables
+-------------
+
+Para finalizar veremos la diferencia entre las cuatro variables disponibles, ya vimos como crear y trabajar con las
+variables del tipo 'StringVar' pero que paso con el resto. Trabajar con 'StringVar' o con las demas es exactamente
+igual, las distinguimos por el tipo de valores que manejan, por ejemplo si necesitamos trabajar con cadenas de texto
+debemos utilizar a 'StringVar' como lo veniamos haciendo, si se trata de numeros enteros utilizaremos a 'IntVar',
+tambien puede ser el caso de que queremos trabajar con numeros pero con decimales para esto tenemos a 'DoubleVar' y por
+ultimo esta 'BooleanVar' que maneja los valores booleanos como *True* o *False*
+
+La siguiente tabla es a modo de resumen:
+
+  +------------+--------------------------+
+  | Nombre     |  Tipo de valor en Python |
+  +------------+--------------------------+
+  | StringVar  |  str                     |
+  +------------+--------------------------+
+  | IntVar     |  int                     |
+  +------------+--------------------------+
+  | DoubleVar  |  float                   |
+  +------------+--------------------------+
+  | BooleanVar |  bool                    |
+  +------------+--------------------------+
+
+Y eso seria todo por el momento, el resto depende de ustedes y conforme lo vayan necesitando lo iran dominando.
