@@ -40,7 +40,7 @@ exclude_patterns = ['_build',
     'chapters/1-intro/1.1.1-History.rst',
     'chapters/1-intro/1.1.2-Features.rst',
     'chapters/2-interfaces/2.1-Considerations.rst',
-    'chapters/6-widgets/6.2-Label.rst'
+    'chapters/6-widgets/6.[!1]*.rst'
 ]
 
 pygments_style = 'sphinx'
