@@ -1,5 +1,7 @@
-Label
-=====
+.. _label:
+
+Etiquetas [Label]
+=================
 
 Para comenzar a llenar esa vacía ventana que acabamos de crear vamos a nombrar a las etiquetas o mas conocidas como
 *'label'* por su nombre en ingles, las podemos encontrar desde interfaces gráficas hasta en formularios en HTML y son
@@ -114,9 +116,11 @@ funcionamiento, contenido dentro de una ventana quedando todo el código como el
 Y así es como quedara nuestro ejemplo terminado:
 
 
-.. image:: img/label/basic_Label.png
+.. figure:: img/label/basic_Label.png
     :alt: Ejemplo Basico de Label
     :align: center
+
+    Ejemplo Basico de Label
 
 
 Habiendo ya escrito esas lineas se da por finalizada la muestra de este primer widget, pero antes veamos algunos
@@ -126,6 +130,10 @@ métodos que tenemos disponibles.
 Métodos
 -------
 
+.. _cget-method:
+
+cget
+^^^^
 
 .. py:method:: cget(option)
 
@@ -156,6 +164,11 @@ Por ejemplo si sobre nuestro widget llamáramos al método 'cget' con los siguie
 
 
 Así funcionaria de la misma forma para todas las opciones soportadas por el widget.
+
+.. _configure-method:
+
+configure
+^^^^^^^^^
 
 .. todo:: Mejorar uso de Sphinx (http://sphinx-doc.org/domains.html#the-python-domain)
 
@@ -206,3 +219,5 @@ se muestra un ejemplo para cambiar el color de fondo de la etiqueta.
     'image': ('image', 'image', 'Image', '', ''),
     'compound': ('compound', 'compound', 'Compound', <index object at 0x559d5b771980>, 'none'),
     ...
+
+.. todo:: Mencionar metodos para ttk
