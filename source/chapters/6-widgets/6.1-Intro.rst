@@ -7,4 +7,8 @@ En esta sección no nos centraremos en el posicionamiento y diseño de los eleme
 gráfica, lo dejaremos para la siguiente sección *Gestión del diseño* en donde se vera mas detenidamente
 este asunto.
 
+Sobre las opciones que soportar los widgets seran analizados en una seccion aparte, debido a que el funcionamiento de
+muchas de ellas son similares en cada widget, en caso de presentar alguna diferencia la misma sera mencionada.
+
 .. include:: 6.2-Label.rst
+.. include:: 6.3-Button.rst
