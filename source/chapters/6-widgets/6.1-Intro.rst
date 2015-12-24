@@ -12,3 +12,4 @@ muchas de ellas son similares en cada widget, en caso de presentar alguna difere
 
 .. include:: 6.2-Label.rst
 .. include:: 6.3-Button.rst
+.. include:: 6.4-Entry.rst
