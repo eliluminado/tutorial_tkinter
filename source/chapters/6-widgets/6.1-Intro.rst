@@ -15,3 +15,4 @@ muchas de ellas son similares en cada widget, en caso de presentar alguna difere
 .. include:: 6.4-Entry.rst
 .. include:: 6.5-Vars.rst
 .. include:: 6.6-Checkbutton.rst
+.. include:: 6.7-Radiobutton.rst
