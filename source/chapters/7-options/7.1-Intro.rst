@@ -119,7 +119,8 @@ Posiciona el texto/imagen en la parte superior del widget
     boton = tk.Button(root, text="Hola Mundo!!!", width=20, height=10, anchor="n")
 
 .. image:: img/anchor/anchor_n.png
-   :align: center
+    :alt: Ejemplo anchor="n"
+    :align: center
 
 
 .. _option-anchor-ne:
@@ -134,7 +135,8 @@ Posiciona el texto/imagen en la esquina superior derecha del widget
     boton = tk.Button(root, text="Hola Mundo!!!", width=20, height=10, anchor="ne")
 
 .. image:: img/anchor/anchor_ne.png
-   :align: center
+    :alt: Ejemplo anchor="ne"
+    :align: center
 
 
 .. _option-anchor-w:
@@ -149,7 +151,8 @@ Posiciona el texto/imagen en la parte izquierda del widget
     boton = tk.Button(root, text="Hola Mundo!!!", width=20, height=10, anchor="w")
 
 .. image:: img/anchor/anchor_w.png
-   :align: center
+    :alt: Ejemplo anchor="w"
+    :align: center
 
 
 .. _option-anchor-center:
@@ -164,7 +167,8 @@ Posiciona el texto/imagen en el centro del widget
     boton = tk.Button(root, text="Hola Mundo!!!", width=20, height=10, anchor="center")
 
 .. image:: img/anchor/anchor_center.png
-   :align: center
+    :alt: Ejemplo anchor="center"
+    :align: center
 
 
 .. _option-anchor-e:
@@ -179,7 +183,8 @@ Posiciona el texto/imagen en la parte derecha del widget
     boton = tk.Button(root, text="Hola Mundo!!!", width=20, height=10, anchor="e")
 
 .. image:: img/anchor/anchor_e.png
-   :align: center
+    :alt: Ejemplo anchor="e"
+    :align: center
 
 
 .. _option-anchor-sw:
@@ -194,7 +199,8 @@ Posiciona el texto/imagen en la esquina inferior izquierda del widget
     boton = tk.Button(root, text="Hola Mundo!!!", width=20, height=10, anchor="sw")
 
 .. image:: img/anchor/anchor_sw.png
-   :align: center
+    :alt: Ejemplo anchor="sw"
+    :align: center
 
 
 .. _option-anchor-s:
@@ -209,7 +215,8 @@ Posiciona el texto/imagen en la parte inferior del widget
     boton = tk.Button(root, text="Hola Mundo!!!", width=20, height=10, anchor="s")
 
 .. image:: img/anchor/anchor_s.png
-   :align: center
+    :alt: Ejemplo anchor="s"
+    :align: center
 
 
 .. _option-anchor-se:
@@ -224,4 +231,28 @@ Posiciona el texto/imagen en la esquina inferior derecha del widget
     boton = tk.Button(root, text="Hola Mundo!!!", width=20, height=10, anchor="se")
 
 .. image:: img/anchor/anchor_se.png
-   :align: center
+    :alt: Ejemplo anchor="se"
+    :align: center
+
+
+.. _option-background:
+
+background (bg)
+---------------
+
+Sirve para indicar el color de fondo que tendra en area del widget cuando este se encuentre inactivo. Tambien se puede
+utilizar su forma abreviada 'bg' como podemos ver en el segundo ejemplo.
+
+.. code-block:: python
+
+    boton = tk.Button(root, text="Hola Mundo!!!", background="#38EB5C")
+
+.. code-block:: python
+
+    boton = tk.Button(root, text="Hola Mundo!!!", bg="#38EB5C")
+
+.. figure:: img/background/basic_background.png
+    :alt: Ejemplo basico de background
+    :align: center
+
+    Vemos el color verde que toma el boton
