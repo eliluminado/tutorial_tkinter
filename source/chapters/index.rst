@@ -13,3 +13,5 @@
     5-basic/*
 
     6-widgets/6.1-Intro.rst
+
+    7-options/7.1-Intro.rst
