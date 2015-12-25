@@ -162,6 +162,8 @@ Estos índices nos permiten tener un mayor control sobre sobre los cuadros de te
 siguiente cuando veamos los métodos disponibles para este.
 
 
+.. _entry-methods:
+
 Métodos
 -------
 
