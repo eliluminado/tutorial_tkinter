@@ -128,7 +128,7 @@ método 'icursor' para alterar el lugar del cursor.
 
 Obviamente cuando nos referimos a cursor nos referimos a la barra vertical que nos aparece cuando escribimos no al
 cursor del mouse (Ver mas información aquí
-`Cursor de texto <http://es.wikipedia.org/wiki/Cursor_%28inform%C3%A1tica%29#Cursor_de_texto>`_).
+`Cursor de texto <https://es.wikipedia.org/wiki/Cursor_%28inform%C3%A1tica%29#Cursor_de_texto>`_).
 
 
 sel.first y sel.last

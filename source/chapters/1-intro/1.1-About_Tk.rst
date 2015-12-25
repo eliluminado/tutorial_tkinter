@@ -1,7 +1,7 @@
 Acerca de Tk
 ============
 
-Tkinter es un `binding <http://es.wikipedia.org/wiki/Binding>`_ de la biblioteca gráfica Tcl/Tk para el lenguaje de
+Tkinter es un `binding <https://es.wikipedia.org/wiki/Binding>`_ de la biblioteca gráfica Tcl/Tk para el lenguaje de
 programación Python, con estos queremos decir que Tk se encuentra disponible para varios lenguajes de programación
 entre los cuales se encuentra Python con el nombre de Tkinter. Este no es mas que una adaptación de esta librería
 para el lenguaje Python con lo cual usar Tk en otro lenguaje no nos supondrá un inconveniente.
