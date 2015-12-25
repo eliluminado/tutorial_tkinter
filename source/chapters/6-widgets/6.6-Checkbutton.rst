@@ -73,8 +73,8 @@ cget
 
 Este método cumple la misma función que se vio en el widget :ref:`Label <label>`. :ref:`Ver aqui <cget-method>`.
 
-.. _configure-checkbutton-method:
 
+.. _configure-checkbutton-method:
 
 configure
 ^^^^^^^^^
