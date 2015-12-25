@@ -20,6 +20,12 @@ Introduccion
 
         Branch master
 
+    .. image:: https://readthedocs.org/projects/guia-tkinter/badge/?version=develop
+        :alt: Documentation Status
+        :align: left
+        :target: http://guia-tkinter.readthedocs.org/es/develop/?badge=develop
+
+
     .. ifconfig:: language is "es"
 
         .. image:: img/cc-by-sa.svg
