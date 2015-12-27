@@ -16,6 +16,8 @@ documentacion oficial de Tk sobre la libreria Tkinter con ejemplos e imagenes.
 Pueden encontrar mas informacion desde la documentacion oficial de Tcl/Tk sobre las opciones estandar
 `http://www.tcl.tk/man/tcl8.5/TkCmd/options.htm <http://www.tcl.tk/man/tcl8.5/TkCmd/options.htm>`_
 
+.. todo:: Especificar widgets afectados por cada opcion (Ver formato de impresion)
+
 
 .. _option-activebackground:
 
@@ -52,8 +54,8 @@ Acepta cualquier color en un formato valido para Tk, ver en seccion "Colores"
 activeforeground
 ----------------
 
-Al igual que pasa con 'activebackground' con esta otra opcion podemos especificar el color en este caso de la fuente del
-widget cuando se posiciona el cursor sobre este.
+Al igual que pasa con 'activebackground' con esta otra opcion podemos especificar el color en este caso de primer plano
+del widget cuando se posiciona el cursor sobre este.
 
 .. code-block:: python
 
@@ -256,3 +258,251 @@ utilizar su forma abreviada 'bg' como podemos ver en el segundo ejemplo.
     :align: center
 
     Vemos el color verde que toma el boton
+
+
+.. _option-bitmap:
+
+bitmap
+------
+
+.. todo:: Ampliar documentacion
+
+.. code-block:: python
+
+    boton_error = tk.Label(root, bitmap="error").pack()
+    boton_gray75 = tk.Label(root, bitmap="gray75").pack()
+    boton_gray50 = tk.Label(root, bitmap="gray50").pack()
+    boton_gray25 = tk.Label(root, bitmap="gray25").pack()
+    boton_gray12 = tk.Label(root, bitmap="gray12").pack()
+    boton_hourglass = tk.Label(root, bitmap="hourglass").pack()
+    boton_info = tk.Label(root, bitmap="info").pack()
+    boton_questhead = tk.Label(root, bitmap="questhead").pack()
+    boton_question = tk.Label(root, bitmap="question").pack()
+    boton_warning = tk.Label(root, bitmap="warning").pack()
+
+.. figure:: img/bitmap/predefined_bitmaps.png
+    :alt: Bitmaps Predefinidos
+    :align: center
+
+    Muestra de los bitmaps predefinidos
+
+
+.. _option-borderwidth:
+
+borderwidth (bd)
+----------------
+
+Nos da la posibilidad de especificar el ancho del borde del elemento con el que estemos trabajando, Tkinter nos permite
+especificar el valor en varias unidades de medida (centimetros, pulgadas, milimetros y puntos) las cuales seran vistas
+mas adelante en la guia. Si no se utiliza junto con la opcion 'relief' visualmente es similar a utilizar las opciones
+'heigth' y 'width' como se puede observar en el ejemplo. El valor por defecto es de 1 pixel.
+
+.. code-block:: python
+
+    boton = tk.Button(root, text="Hola Mundo!!!", borderwidth=15)
+
+.. code-block:: python
+
+    boton = tk.Button(root, text="Hola Mundo!!!", bd=15)
+
+.. figure:: img/borderwidth/borderwidth_15px.png
+    :alt: Ejemplo de borderwidth
+    :align: center
+
+    Un boton con un borde de 15 pixeles
+
+
+.. _option-command:
+
+command
+-------
+
+Como ya lo mencionamos cuando vimos al widget Button este permite indicar la funcion o metodo que queremos que se llame
+cuando se preciona por ejemplo un boton, pero esta opcion tambien funciona con otros widgets de Tkinter cumpliendo la
+misma funcion.
+
+.. code-block:: bash
+
+    >>> def callback():
+    >>>     print("Excelente")
+
+    >>> boton = tk.Button(root, text="Que te parece la guia?", command=callback)
+    'Excelente'
+
+
+.. _option-cursor:
+
+cursor
+------
+
+.. todo:: Crear seccion y enlazar
+
+Nos da la posiblidad de indicar que cursor queremos que se muestre cuando el mouse se posiciona sobre la etiqueta.
+En el siguiente enlace podremos encontrar una lista con los cursores disponibles en Tkinter
+`http://www.tcl.tk/man/tcl8.5/TkCmd/cursors.htm <http://www.tcl.tk/man/tcl8.5/TkCmd/cursors.htm>`_ (Ver seccion "Anexos"
+para ver el listado completo).
+
+El valor 'none' consigue eliminar el cursor cuando se pasa el cursor sobre el widget.
+
+.. code-block:: python
+
+  etiqueta = tk.Label(root, text="Que te parece la guia?", cursor="hand1")
+
+.. figure:: img/cursor/hand1.png
+    :alt: Un cursor de ejemplo
+    :align: center
+
+    Mostrando una mano a diferencia del cursor normal
+
+
+.. _option-compound:
+
+compound
+--------
+
+Especifica si el widget debe mostrar texto y mapas/imágenes al mismo tiempo, y si es así, donde el mapa de bits o imagen
+debe estar en relación con el texto. Debe ser uno de los valores "none", "bottom", "top", "left", "right", o "center".
+Por ejemplo, el valor (predeterminado) "none" especifica que el mapa de bits o imagen (si se ha definido en el sistema)
+se mostrará en lugar del texto, el valor "left" especifica que el mapa de bits o imagen se muestra a la izquierda del
+texto y el valor "center" especifica que el mapa de bits o imagen debe aparecer en la parte superior del texto.
+
+.. figure:: img/compound/compound_left.png
+    :alt: compound="left"
+    :align: left
+
+    Usando compound con el valor left
+
+.. figure:: img/compound/compound_right.png
+    :alt: compound="right"
+    :align: right
+
+    Usando compound con el valor right
+
+.. figure:: img/compound/compound_top.png
+    :alt: compound="top"
+    :align: left
+
+    Usando compound con el valor top
+
+.. figure:: img/compound/compound_bottom.png
+    :alt: compound="bottom"
+    :align: right
+
+    Usando compound con el valor bottom
+
+.. figure:: img/compound/compound_center.png
+    :alt: compound="center"
+    :align: left
+
+    Usando compound con el valor center
+
+.. figure:: img/compound/compound_none.png
+    :alt: compound="none"
+    :align: right
+
+    Usando compound con el valor none
+
+
+.. _option-default:
+
+default
+-------
+
+.. todo:: Escribir documentacion (Opcion valida para Button)
+
+
+.. _option-disabledbackground:
+
+disabledbackground
+------------------
+
+.. todo:: Escribir documentacion (Opcion valida para Spinbox)
+
+
+.. _option-disabledforeground:
+
+disabledforeground
+------------------
+
+Funciona de la misma forma que foreground y activeforeground pero para elementos deshabilitados, se le puede pasar
+cualquier color en un formato valido, si no se le pasa una cadena vacia el color que se mostrara sera el de la opcion
+foreground pero con un efecto punteado.
+
+El valor por defecto es *None* y obtiene el color del sistema.
+
+.. code-block:: python
+
+    boton = tk.Button(root, text="Hola Mundo!!!", state="disabled", disabledforeground=None)
+
+.. figure:: img/disabledforeground/disabledforeground_none.png
+    :alt: disabledforeground con color por defecto
+    :align: center
+
+    Usando disabledforeground con el color por defecto
+
+.. code-block:: python
+
+    boton = tk.Button(root, text="Hola Mundo!!!", state="disabled", disabledforeground="#F50743")
+
+.. figure:: img/disabledforeground/disabledforeground_with_value.png
+    :alt: disabledforeground con valor
+    :align: center
+
+    Usando disabledforeground con un color rojo
+
+.. code-block:: python
+
+    boton = tk.Button(root, text="Hola Mundo!!!", state="disabled", disabledforeground="")
+
+.. figure:: img/disabledforeground/disabledforeground_without_value.png
+    :alt: disabledforeground sin valor
+    :align: center
+
+    Usando disabledforeground sin darle ningun valor
+
+
+.. _option-exportselection:
+
+exportselection
+---------------
+
+.. todo: Escribir documentacion
+
+
+.. _option-font:
+
+font
+----
+
+
+.. _option-foreground:
+
+foreground (fg)
+---------------
+
+.. todo::
+
+    * Enlazar Label y Entry con sus secciones
+    * Ver ejemplos para widgets especificos
+    * Mejorar descripcion
+
+Si deseamos cambiar el color de primer plano usamos foreground, para explicarlo un poco mejor asi como vimos background
+para determinar el color de fondo del widget tambien podemos cambiar el color de la parte delantera. Por lo general por
+ejemplo en Label y Entry el color de foreground modifica el color de la fuente. Este color es mostrado en el estado
+normal del widget, completando el circulo de estados ya vistos (normal, activo y desactivado).
+
+Permite usar la abreviatura **fg** como habiamos visto para *background*.
+
+.. code-block:: python
+
+    boton = Tkinter.Button(root, text="Hola Mundo!!!", command=funcion, foreground="#38EB5C")
+
+.. code-block:: python
+
+    boton = Tkinter.Button(root, text="Hola Mundo!!!", command=funcion, fg="#38EB5C")
+
+.. figure:: img/foreground/basic_foreground.png
+    :alt: Ejemplo de foreground
+    :align: center
+
+    Mostrando una fuente verde con foreground
