@@ -15,3 +15,5 @@
     6-widgets/6.1-Intro.rst
 
     7-options/7.1-Intro.rst
+
+    8-colors/8.1-Intro.rst
