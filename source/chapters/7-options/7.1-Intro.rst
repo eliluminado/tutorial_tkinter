@@ -506,3 +506,328 @@ Permite usar la abreviatura **fg** como habiamos visto para *background*.
     :align: center
 
     Mostrando una fuente verde con foreground
+
+
+.. _option-height:
+
+height
+------
+
+.. todo:: Opcion valida para Button
+
+Permite indicar la altura a la que se posicionara nuestro widget en lineas no en pixeles. Si esta opcion no se
+especifica el tamaño del elemento se ajustara dependiendo el contenido del mismo.
+
+Con None especificamos su valor por defecto que es 0.
+
+.. code-block:: python
+
+    boton = tk.Button(root, text="Hola Mundo!!!", height=0)
+
+.. figure:: img/height/height_0.png
+    :alt: Ejemplo de height
+    :align: center
+
+    Mostrando una altura de 0
+
+.. code-block:: python
+
+    boton = tk.Button(root, text="Hola Mundo!!!", height=5)
+
+.. figure:: img/height/height_5.png
+    :alt: Ejemplo de height
+    :align: center
+
+    Mostrando una altura de 5
+
+.. code-block:: python
+
+    boton = tk.Button(root, text="Hola Mundo!!!", height=10)
+
+.. figure:: img/height/height_10.png
+    :alt: Ejemplo de height
+    :align: center
+
+    Mostrando una altura de 10
+
+
+.. _option-justify:
+
+justify
+-------
+
+El valor por defecto es center.
+
+.. _option-justify-right:
+
+RIGHT
+^^^^^
+
+.. code-block:: python
+
+    boton = tk.Button(root, text="Hola\nMundo!!!", justify="right")
+
+.. figure:: img/justify/justify_right.png
+    :alt: Ejemplo de justify
+    :align: center
+
+    Orientando el texto a la derecha
+
+
+.. _option-justify-center:
+
+CENTER
+^^^^^^
+
+.. code-block:: python
+
+    boton = tk.Button(root, text="Hola\nMundo!!!", justify="center")
+
+.. figure:: img/justify/justify_center.png
+    :alt: Ejemplo de justify
+    :align: center
+
+    Centrando el texto
+
+
+.. _option-justify-left:
+
+LEFT
+^^^^
+
+.. code-block:: python
+
+    boton = tk.Button(root, text="Hola\nMundo!!!", justify="left")
+
+.. figure:: img/justify/justify_left.png
+    :alt: Ejemplo de justify
+    :align: center
+
+    Orientando el texto a la izquierda
+
+
+.. _option-overrelief:
+
+overrelief
+----------
+
+.. todo:: Escribir documentacion (Se aplica a Button)
+
+Especifica un relieve alternativo para el botón, que se utilizará cuando el cursor del ratón este sobre el widget. Esta
+opcion puede ser usada para hacer toolbar buttons, configurando relief="flat" y overrelief="raised".
+
+La cadena vacía es el valor predeterminado.
+
+.. code-block:: python
+
+    boton = tk.Button(root, text="Hola Mundo!!!", overrelief="")
+
+.. figure:: img/overrelief/overrelief_normal.png
+    :alt: Ejemplo de overrelief
+    :align: center
+
+    overrelief con valor None
+
+.. code-block:: python
+
+    boton = tk.Button(root, text="Hola Mundo!!!", overrelief="flat")
+
+.. figure:: img/overrelief/overrelief_flat.png
+    :alt: Ejemplo de overrelief
+    :align: center
+
+    overrelief con valor
+
+.. code-block:: python
+
+    boton = tk.Button(root, text="Hola Mundo!!!", overrelief="raised")
+
+.. figure:: img/overrelief/overrelief_raised.png
+    :alt: Ejemplo de overrelief
+    :align: center
+
+    overrelief con valor
+
+.. code-block:: python
+
+    boton = tk.Button(root, text="Hola Mundo!!!", relief="flat", overrelief="raised")
+
+.. figure:: img/overrelief/overrelief_flat_raised_mouseout.png
+    :alt: Ejemplo de overrelief
+    :align: left
+
+    Estilo flat-raised sin cursor encima
+
+.. figure:: img/overrelief/overrelief_flat_raised_mouseover.png
+    :alt: Ejemplo de overrelief
+    :align: right
+
+    Estilo flat-raised con cursor encima
+
+
+.. _option-relief:
+
+relief
+------
+
+.. todo:: Profundizar introduccion
+
+Especifica la apariencia de un borde decorativo alrededor del widget que simula un efecto 3D sobre el elemento, el
+ancho de esta sombra depende del valor que se especifique con el atributo 'borderwidth', los posibles valores son
+SUNKEN, RAISED, GROOVE, RIDGE, FLAT. El valor por defecto es FLAT que no coloca ningun borde sobre el widget.
+
+Descripcion de los cuatro estilos:
+
+.. _option-relief-sunken:
+
+SUNKEN
+^^^^^^
+
+Borde hundido, que provoca que el elemento que encierra parezca que se encuentra por debajo del nivel de la superficie de la pantalla.
+
+.. code-block:: python
+
+    boton = tk.Button(root, text="Hola Mundo!!!", relief="sunken", borderwidth=5)
+
+.. figure:: img/relief/relief_sunken.png
+    :alt: Ejemplo de relief
+    :align: center
+
+
+.. _option-relief-raised:
+
+RAISED
+^^^^^^
+
+Borde saliente, que provoca que el elemento que encierra parezca que se encuentra por encima del nivel de la superficie de la pantalla.
+
+.. code-block:: python
+
+    boton = tk.Button(root, text="Hola Mundo!!!", relief="raised", borderwidth=5)
+
+.. figure:: img/relief/relief_raised.png
+    :alt: Ejemplo de relief
+    :align: center
+
+
+.. _option-relief-groove:
+
+GROOVE
+^^^^^^
+
+Borde hundido, que visualmente parece que se encuentra por debajo del nivel de la superficie de la pantalla.
+
+.. code-block:: python
+
+    boton = tk.Button(root, text="Hola Mundo!!!", relief="groove", borderwidth=5)
+
+.. figure:: img/relief/relief_groove.png
+    :alt: Ejemplo de relief
+    :align: center
+
+
+.. _option-relief-ridge:
+
+RIDGE
+^^^^^
+Borde saliente, que visualmente parece que se encuentra por encima del nivel de la superficie de la pantalla.
+
+.. code-block:: python
+
+    boton = tk.Button(root, text="Hola Mundo!!!", relief="ridge", borderwidth=5)
+
+.. figure:: img/relief/relief_ridge.png
+    :alt: Ejemplo de relief
+    :align: center
+
+
+.. _option-relief-flat:
+
+FLAT
+^^^^
+
+No se muestra ningún borde.
+
+.. code-block:: python
+
+    boton = tk.Button(root, text="Hola Mundo!!!", relief="flat", borderwidth=5)
+
+.. figure:: img/relief/relief_flat.png
+    :alt: Ejemplo de relief
+    :align: center
+
+
+.. option-state:
+
+state
+-----
+
+.. todo:: Enlazar opciones 'foreground' y 'background'
+
+Esta opcion especifica tres estados 'normal', 'active' o 'disabled'. En estado normal se muestra el widget usando las
+opciones 'foreground' y 'background', en estado 'active' se muestra usando las opciones 'activeforeground' y
+'activebackground' y por ultimo el estado 'disabled' es mostrado usando 'disabledforeground' y 'background' y
+deshabilitando el uso del widget.
+
+En el siguiente ejemplo se definen tres botones, las tres tienen los mismos argumentos con lo mismos valores a excepcion
+de la opcion 'state', en el resultado final podremos ver que al cambiar el valor de 'state' solo toma los valores que
+habiamos mencionado en la descripcion de la opcion ignorando el resto.
+
+.. code-block:: python
+
+    from six.moves import tkinter as tk
+
+    root = tk.Tk()
+    root.geometry("300x100")
+
+    foreground = "red"
+    background = "blue"
+    activeforeground = "green"
+    activebackground = "black"
+    disabledforeground = "white"
+
+    boton_normal = tk.Button(root, text="normal", state="normal",
+                           foreground=foreground,
+                           background=background,
+                           activeforeground=activeforeground,
+                           activebackground=activebackground,
+                           disabledforeground=disabledforeground).pack()
+
+
+    boton_active = tk.Button(root, text="active", state="active",
+                           foreground=foreground,
+                           background=background,
+                           activeforeground=activeforeground,
+                           activebackground=activebackground,
+                           disabledforeground=disabledforeground).pack()
+
+    boton_disabled = tk.Button(root, text="disabled", state="disabled",
+                           foreground=foreground,
+                           background=background,
+                           activeforeground=activeforeground,
+                           activebackground=activebackground,
+                           disabledforeground=disabledforeground).pack()
+
+.. figure:: img/state/basic_state.png
+    :alt: Ejemplo state
+    :align: center
+
+    Ejemplo de los 3 estados sin el cursor encima
+
+.. figure:: img/state/basic_state_normal_mouseover.png
+    :alt: Ejemplo state
+    :align: center
+
+    Ejemplo con el cursor encima del primer boton (Estado normal)
+
+.. figure:: img/state/basic_state_active_mouseover.png
+    :alt: Ejemplo state
+    :align: center
+
+    Ejemplo con el cursor encima del segundo boton (Estado active)
+
+.. figure:: img/state/basic_state_disabled_mouseover.png
+    :alt: Ejemplo state
+    :align: center
+
+    Ejemplo con el cursor encima del tercer boton (Estado disabled)
