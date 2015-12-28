@@ -17,6 +17,30 @@ Workflow
 El desarrollo y las correcciones de la guia se realizan sobre la rama *develop* y se mantiene la rama *master* unicamente
 para el contenido que se considere corregido y correcto.
 
+Como recomendacion se agradece chequear que Sphinx no tire errores durante la compilacion, para esto esta tox.
+
+.. todo:: Ampliar contenido sobre uso de tox
+
+Tambien pueden asegurarse de hacerlo antes de hacer un commit modificando o generando el archivo
+:file:`.git/hooks/pre-commit` y reemplazar el contenido de este por la siguiente linea
+
+.. code-block:: bash
+
+    #!/bin/sh
+
+    tox
+
+Y para el fichero :file:`.git/hooks/pre-push` hacemos lo mismo pero con el siguiente codigo.
+
+.. code-block:: bash
+
+    #!/bin/sh
+
+    tox -e linkcheck
+
+Esta recomendacion lo que hace es que despues de que guardes tus cambios con Git te asegures de que Sphinx lo interpreta
+correctamente y el segundo fichero mostrado evita que subas cambios a GitHub donde hayan links rotos.
+
 
 Estilos
 -------
@@ -32,3 +56,34 @@ Traducciones
 ------------
 
 .. todo:: Ampliar contenido
+
+
+.. _references:
+
+Referencias
+-----------
+
+Estos son los recursos web que se tuvieron en cuenta para la realizacion de esta guia (ademas de la documentacion
+oficial de la libreria tk).
+
+
+Aun no revisadas
+================
+
+http://zetcode.com/gui/tkinter/
+
+http://modcopy.sourceforge.net/tips.html
+
+http://infohost.nmt.edu/tcc/help/pubs/tkinter/web/index.html
+
+http://tkinter.unpythonic.net/wiki/
+
+http://staff.washington.edu/rowen/ROTKFolklore.html
+
+http://staff.washington.edu/rowen/TkinterSummary.html
+
+http://www.ferg.org/thinking_in_tkinter/all_programs.html
+
+http://effbot.org/tkinterbook/
+
+http://www.tkdocs.com/
