@@ -831,3 +831,56 @@ habiamos mencionado en la descripcion de la opcion ignorando el resto.
     :align: center
 
     Ejemplo con el cursor encima del tercer boton (Estado disabled)
+
+
+.. _option-text:
+
+text
+----
+
+.. todo:: Enlazar opcion compound
+
+Este es un elemento muy importante para los widgets como Label o Button entre otros, esta opcion nos da la posibilidad
+de incluir un texto dentro del widget, este texto puede contener saltos de lineas en caso de ser necesario y tambien se
+puede utilizar una variable para indicar la cadena de texto a usar. Si se utiliza una imagen este elemento es ignorado
+por Tkinter salvo que usemos la opcion compound.
+
+Ejemplo simple:
+
+.. code-block:: python
+
+  etiqueta = tk.Label(root, text="Esto es una etiqueta")
+
+Ejemplo con una variable:
+
+.. code-block:: python
+
+    texto = "Esto es una etiqueta"
+    etiqueta = tk.Label(root, text=texto)
+    etiqueta.pack()
+
+.. image:: img/text/basic_text.png
+    :alt: Ejemplo basico text
+    :align: center
+
+
+Ejemplo con salto de linea (recuerden que deben usar el caracter \n para el salto de linea):
+
+.. code-block:: python
+
+    etiqueta = tk.Label(root, text="Hola \n a todos")
+
+.. image:: img/text/basic_text_newline.png
+    :alt: Ejemplo basico text
+    :align: center
+
+
+Ejemplo con tabulacion (recuerden que deben usar el caracter \t para la tabulacion):
+
+.. code-block:: python
+
+    etiqueta = tk.Label(root, text="Hola \t a todos")
+
+.. image:: img/text/basic_text_tabulation.png
+    :alt: Ejemplo basico text
+    :align: center
