@@ -1,2 +1,9 @@
 Buenas practicas
 ================
+
+Colores
+-------
+
+En esta parte nos detendremos un momento para analizar la utilizacion de colores en nuestra
+aplicacion y la utilizacion de paletas y esquemas de colores que nos permitan conseguir aspectos mas prolijos y
+agradables a la vista.
